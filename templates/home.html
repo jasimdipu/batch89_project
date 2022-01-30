@@ -1,0 +1,36 @@
+{%extends 'main.html'%}
+{%block content%}
+
+<div class="row w-100">
+        {%for cat in categories%}
+            <div class="card justify-content-center" style="width: 18rem; height:30px; margin-left: 50px;">
+                <div class="card-body">
+                    <div class="row">
+                        <!-- <p>{{cat.image.url}}</p> -->
+                        <img src="{{cat.image.url}}" style="max-width: 100px; max-height: 100px; border-radius: 50%;">
+                        <h5>{{cat.name}}</h5>
+                    </div>
+                    
+                </div>
+            </div>
+        {%endfor%}
+    </div>
+<div class="container">
+<h3 class="m-5">Products</h3>
+    <div class="row w-100 mt-5">
+        {%for p in products%}
+        <div class="card m-5" style="width: 18rem;">
+            <img class="card-img-top" src="{{p.image.url}}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{p.name}}</h5>
+                <p>{{p.price}}</p>
+                <a href="#" class="btn btn-primary">Add to cart</a>
+                <a href="#" class="btn btn-secondary">details</a>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+</div>
+
+    
+{%endblock%}
